@@ -15,7 +15,7 @@ from streamlit_drawable_canvas import st_canvas
 # bg_color = st.sidebar.color_picker("Background color hex: ", "#eee")
 # bg_image = st.sidebar.file_uploader("Background image:", type=["png", "jpg"])
 
-# realtime_update = st.sidebar.checkbox("Update in realtime", True)
+realtime_update = st.sidebar.checkbox("Update in realtime", True)
 
     
 
