@@ -4,9 +4,10 @@ import streamlit as st
 from streamlit_drawable_canvas import st_canvas
 
 # Specify canvas parameters in application
-drawing_mode = st.sidebar.selectbox(
-    "Drawing tool:", ("point", "freedraw", "line", "rect", "circle", "transform")
-)
+# drawing_mode = st.sidebar.selectbox(
+#     "Drawing tool:", ("point", "freedraw", "line", "rect", "circle", "transform")
+# )
+drawing_mode = "freedraw"
 
 stroke_width = st.sidebar.slider("Stroke width: ", 1, 25, 3)
 if drawing_mode == 'point':
