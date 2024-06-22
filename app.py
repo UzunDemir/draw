@@ -3,17 +3,17 @@ from PIL import Image
 import streamlit as st
 from streamlit_drawable_canvas import st_canvas
 
-# # Specify canvas parameters in application
-# drawing_mode = st.sidebar.selectbox(
-#     "Drawing tool:", ("point", "freedraw", "line", "rect", "circle", "transform")
-# )
+# Specify canvas parameters in application
+drawing_mode = st.sidebar.selectbox(
+    "Drawing tool:", ("point", "freedraw", "line", "rect", "circle", "transform")
+)
 
-# stroke_width = 10
-# if drawing_mode == 'point':
-#     point_display_radius = st.sidebar.slider("Point display radius: ", 1, 25, 3)
-# stroke_color = st.sidebar.color_picker("Stroke color hex: ")
-# bg_color = st.sidebar.color_picker("Background color hex: ", "#eee")
-# bg_image = st.sidebar.file_uploader("Background image:", type=["png", "jpg"])
+stroke_width = 10
+if drawing_mode == 'point':
+    point_display_radius = st.sidebar.slider("Point display radius: ", 1, 25, 3)
+stroke_color = st.sidebar.color_picker("Stroke color hex: ")
+bg_color = st.sidebar.color_picker("Background color hex: ", "#eee")
+bg_image = st.sidebar.file_uploader("Background image:", type=["png", "jpg"])
 
 realtime_update = st.sidebar.checkbox("Update in realtime", True)
 
@@ -25,11 +25,11 @@ canvas_result = st_canvas(
     stroke_width=10,
     stroke_color=10,
     background_color=0,
-    #background_image=Image.open(bg_image) if bg_image else None,
+    background_image=Image.open(bg_image) if bg_image else None,
     update_streamlit=realtime_update,
     height=150,
-    #drawing_mode="freedraw",
-    point_display_radius=point_display_radius #if drawing_mode == 'point' else 0,
+    drawing_mode="freedraw",
+    point_display_radius=point_display_radius if drawing_mode == 'point' else 0,
     key="canvas",
 )
 
